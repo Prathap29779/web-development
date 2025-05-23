@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding: 30px;
+                background: linear-gradient(135deg, #ff6b6b, #f7d794, #6bc1ff, #4ecdc4);
+                background-size: 800% 800%;
+                animation: gradientBG 15s ease infinite;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            @keyframes gradientBG {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+            }
+            .frame {
+                background: white;
+                border-radius: 15px;
+                padding: 30px 50px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                max-width: 400px;
+                width: 100%;
+                text-align: center;
+                animation: fadeIn 1s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from {opacity: 0; transform: translateY(-20px);}
+                to {opacity: 1; transform: translateY(0);}
+            }
+            button {
+                margin: 8px;
+                padding: 12px 20px;
+                background: linear-gradient(45deg, #0056b3, #007bff);
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 1.1em;
+                font-weight: 600;
+                box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+                transition: background 0.4s ease, transform 0.2s ease;
+            }
+            button:hover {
+                background: linear-gradient(45deg, #003d80, #0056b3);
+                transform: scale(1.05);
+            }
+            #d {
+                margin-top: 25px;
+                font-weight: 700;
+                font-size: 1.4em;
+                color: #003d80;
+                min-height: 1.5em;
+                transition: color 0.3s ease;
+            }
+            .button-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        </style>
+        <script>
+            const daySpecialties = {
+                sunday: "Relax and recharge",
+                monday: "Start fresh and plan",
+                tuesday: "Focus on productivity",
+                wednesday: "Midweek motivation",
+                thursday: "Keep pushing forward",
+                friday: "Wrap up your tasks",
+                saturday: "Enjoy your hobbies"
+            };
+            function d(day){
+                const specialty = daySpecialties[day] || "";
+                document.getElementById("d").innerHTML = `<strong>${day.charAt(0).toUpperCase() + day.slice(1)}</strong>: ${specialty}`;
+            }
+        </script>
+        <style>
+            .button-container {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="frame">
+            <div class="button-container">
+                <button onclick="d('sunday')">sunday</button>
+                <button onclick="d('monday')">monday</button>
+                <button onclick="d('tuesday')">tuesday</button>
+                <button onclick="d('wednesday')">wednesday</button>
+                <button onclick="d('thursday')">thursday</button>
+                <button onclick="d('friday')">friday</button>
+                <button onclick="d('saturday')">saturday</button>
+            </div>
+            <p id="d"></p>
+        </div>
+    </body>
+</html>
