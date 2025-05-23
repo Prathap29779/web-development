@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <body>
+            <h1>hello world....</h1>
+            <style>
+                button {
+                    margin: 5px;
+                    padding: 10px 15px;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                .alert-btn { background-color: #007bff; }
+                .print-btn { background-color: #28a745; }
+                .about-btn { background-color: #17a2b8; }
+                .contact-btn { background-color: #ffc107; color: black; }
+                .services-btn { background-color: #dc3545; }
+                .home-btn { background-color: #6f42c1; }
+                .blog-btn { background-color: #fd7e14; }
+                .faq-btn { background-color: #20c997; }
+                .support-btn { background-color: #6610f2; }
+                .login-btn { background-color: #e83e8c; }
+            </style>
+            <button class="alert-btn" onclick="hi()">alert</button>
+            <button class="print-btn" onclick="h4()">print</button>
+            <button class="about-btn" onclick="showMsg('About')">About</button>
+            <button class="contact-btn" onclick="showMsg('Contact')">Contact</button>
+            <button class="services-btn" onclick="showMsg('Services')">Services</button>
+            <button class="home-btn" onclick="showMsg('Home')">Home</button>
+            <button class="blog-btn" onclick="showMsg('Blog')">Blog</button>
+            <button class="faq-btn" onclick="showMsg('FAQ')">FAQ</button>
+            <button class="support-btn" onclick="showMsg('Support')">Support</button>
+            <button class="login-btn" onclick="showMsg('Login')">Login</button>
+            <script>
+                function hi(){
+                    alert("hello");
+                }
+                function h4(){
+                    window.print();
+                }
+                function showMsg(msg){
+                    alert(msg);
+                }
+            </script>
+        </body>
+    </head>
+</html>
